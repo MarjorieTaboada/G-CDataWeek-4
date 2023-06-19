@@ -1,4 +1,4 @@
-### Getting and Cleaning Data - Week 4 Coursera
+#Getting and Cleaning Data - Week 4 Coursera
 This repository contains the R Code, codebook, and a tidy data set for assignment 4 in the getting and cleaning data available on Coursera.
 The goal is to prepare tidy data that can be used for later analysis.
 
