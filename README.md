@@ -17,4 +17,4 @@ run_analysis.R contains the coding that does the following steps:
 
 5- From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-The tidydata.txt is the output after the 5th step.
+The tidy_data.txt is the output after the 5th step.
