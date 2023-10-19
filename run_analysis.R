@@ -89,9 +89,17 @@ colnames(human_activity) <-  rename_humanactivity
 
 # Creating a second and independent tidy data set with the average of each variable
 
-tidy_data <- aggregate(. ~subject_id + activity_id, human_activity, mean)
-tidy_data <- tidy_data[order(tidy_data$subject_id, tidy_data$activity_id), ]
+mean_humanactivity <- human_activity %>% 
+  group_by(subject_id, activity_id) %>%
+  summarise(across(where(is.numeric), list(
+    mean = ~ mean(.), 
+    median = ~ median(., na.rm = TRUE)), 
+    .names = "{.col}_{.fn}"
+  ))
 
-write.table(tidy_data, "tidy_data4.txt", row.names = FALSE)
+# output to file "tidy_data.txt"
+write.table(mean_humanactivity, "tidy_data.txt", row.names = FALSE, 
+            quote = FALSE)
+
 
 
